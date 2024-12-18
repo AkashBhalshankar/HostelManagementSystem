@@ -1,0 +1,72 @@
+{%extends 'dashheader.html'%}
+{% load static %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Fee Receipts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .table-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h2>Fee Receipts List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>FullName</th>
+                <th>UTR Number</th>
+                <th>Payment Date</th>
+                <th>Hostel Name</th>
+                <th>Owner Sign</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for receipt in fee_receipts %}
+                <tr>
+                    <td>{{ receipt.1 }}</td>
+                    <td>{{ receipt.2 }}</td>
+                    <td>{{ receipt.3 }}</td>
+                    <td>{{ receipt.4 }}</td>
+                    <td>{{ receipt.5 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{%endblock%}
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Hostel Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .header {
+            background-color: #5cb85c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+        .main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .main-content p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Flex container for cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between cards */
+            flex-wrap: wrap; /* Stack cards when there's not enough space */
+            margin-top: 30px;
+        }
+
+        /* Card style for quotes */
+        .quote-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px; /* Set fixed width for the cards */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .quote-card p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Button style */
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #5cb85c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+            width: 84%;
+        }
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        .logout-btn {
+            background-color: #d9534f;
+        }
+        .logout-btn:hover {
+            background-color: #c9302c;
+        }
+
+        /* Back Button Styling */
+        .back-btn {
+            background-color: #0275d8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #025aa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Student Dashboard</h1>
+    </div>
+    <div class="main-content">
+        <h2>Manage your hostel services efficiently</h2>
+        <p>Click on the options below to proceed with your tasks</p>
+
+        <!-- Flex container for the cards -->
+        <div class="card-container">
+
+            <!-- Fee Receipt Card -->
+            <div class="quote-card">
+                <p>"Pay your fees hassle-free and get your receipt instantly."</p>
+                <a href="{% url 'fee_receipt_form' %}" class="btn">Go to Fee Receipt</a>
+            </div>
+
+            <!-- Complaint Form Card -->
+            <div class="quote-card">
+                <p>"Your voice matters. Let us know if you are facing any issues."</p>
+                <a href="{% url 'complaint_form' %}" class="btn">Go to Complaint Form</a>
+            </div>
+
+            <!-- Logout Card -->
+            <div class="quote-card">
+                <p>"Remember to log out when you're done!"</p>
+                <a href="{% url 'logout' %}" class="btn logout-btn">Logout</a>
+            </div>
+
+        </div>
+
+        <!-- Back Button -->
+        <!-- <a href="{% url 'index' %}" class="back-btn">Back</a> -->
+    </div>
+</body>
+</html>

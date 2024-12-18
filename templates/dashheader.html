@@ -1,0 +1,57 @@
+
+{%load static%}
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sider Menu Bar CSS</title>
+    <link rel="stylesheet" href="{%static 'dashboard.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <style>
+    body{
+        background-image: url("{%static 'dash.svg'%}");
+    }
+    h1{
+      font-size: 70px;
+      font-weight: 900;
+      background-image: url("{%static 'dash.avif'%}");
+      background-size: cover;
+      background-position: center;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transform: translateY(320px);
+      margin-left: 10%;
+    }
+  </style>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Hostel Management System</header>
+    <ul>
+     <li><a href="{%url 'dashheader'%}"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+     <li><a href="{%url 'view_students'%}"><i class="fa-solid fa-graduation-cap"></i>Students</a></li>
+     <li><a href="{%url 'view_complaints'%}"><i class="fa-solid fa-circle-exclamation"></i>Complaints</a></li>
+     <li><a href="{%url 'view_fee_receipts'%}"><i class="fa-solid fa-receipt"></i>fees receipts</a></li>
+     <li><a href="{% url 'logout' %}"><i class="fa-solid fa-house"></i>Logout</a></li>
+     
+     <!-- <li><a href="#"><i class="far fa-envelope"></i>Contact</a></li> -->
+    </ul>
+   </div>
+   {%block content %}
+   {% endblock%}
+   <!-- <h1 align="center">Welcome</h1><br>
+   <h1 align="center">to</h1><br>
+   <h1 align="center">Hostel Management System</h1><br> -->
+    
+      
+    
+   
+  </body>
+</html>
